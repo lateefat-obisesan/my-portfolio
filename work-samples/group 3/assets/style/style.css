@@ -1,0 +1,574 @@
+@charset "utf-8";
+@import "./reset.css";
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    color: #fff;
+    background-color: #5f4e3d;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* 2. BACKGROUND VIDEO HANDLING */
+#bg-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /*controls the "stacking order." used when elements overlap to decide which one stays on top*/
+    filter: brightness(50%); /* Makes text easier to read */
+    object-fit: cover;
+}
+
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* Modern frosted glass effect */
+    padding: 16px 5%;/*Percentages are for side padding to stay mobile-friendly*/
+    font-size: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header img {
+    height: 80px; /* Slightly bigger overall */
+    width: 80px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    border: 3px solid #6f4e37;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+
+}
+
+header img:hover {
+    transform: scale(1.1);    /* Grows slightly when clicked */
+}
+
+header h1 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #f5f5f5;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    font-style: italic;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul li a:hover {
+    font-weight: 500;
+    color: #d4a373;
+}
+
+/* 4. MAIN LANDING (HERO) */
+.center {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+
+    p {
+        font-size: 30px;
+    }
+}
+
+.cafe {
+    font-size: 60px;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* 5. GALLERY SECTION (4 COLUMNS) */
+.gallery {
+    display: flex; /* Use Flexbox instead of Grid */
+    flex-wrap: wrap;  /* Allows items to move to next line */
+    justify-content: center;
+    gap: 20px; /* Space between columns */
+    padding: 70px 10%;
+    background: rgb(132, 92, 63);
+}
+
+.our {
+    width: 100%; /* In Flexbox, this makes the title take a full row */
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.column {
+    max-width: calc(25% - 15px);
+    flex: 0 0 calc(25% - 15px);
+    background:rgb(128, 128, 108);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.column:hover {
+    transform: translateY(-10px);
+}
+
+.column img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Keeps aspect ratio clean */
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+/* CALL TO ACTION BUTTONS */
+.column a, .story a, .offer a, button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 25px;
+    background: #6f4e37;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.column a:hover {background: #3d2b1f;}
+
+.story {
+    font-size: 25px;
+    padding: 100px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgb(128, 128, 108);
+    padding: 50px;
+    gap: 40px;
+}
+
+.card {
+    flex: 1;
+    min-width: 200px;
+}
+
+#menu {
+    flex:35%;
+    color: #954e1c;
+    text-decoration: none;
+    font-size: 27px;
+    font-weight: 900;
+    text-align: center;
+}
+
+#menu:hover {
+    color: #e3823d;
+    transform: translateY(-5px);
+}
+
+#menu::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #6f4e37;
+    transition: width 0.3s ease;
+}
+
+#menu:hover::after {
+    width: 100%;
+}
+
+/* 6. ABOUT/BIO SECTION */
+.about h1, .bold h1 {
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+    font-size: 48px;
+}
+
+.vision, .bio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 80px 10%;
+    background: transparent;
+}
+
+.vision h2 {
+    text-align: center;
+    font-size: 48px;
+    letter-spacing: 4px;
+    margin-bottom: 40px;
+    color: #f5f5f5;
+    text-transform: uppercase;
+}
+
+.offer {
+    text-align: center;
+    padding: 100px 15%;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+}
+
+.offer p {
+    font-size: 22px;
+    color: #f5f5f5;
+    font-style: italic;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/*Services*/
+.services {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.services h1 {
+    color: #fff;
+    font-size: 50px;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+.services-list {
+    display: flex; 
+    flex-wrap: wrap; /* Essential for responsiveness */
+    justify-content: center;
+    gap: 25px;
+    padding: 60px 10%;
+    background: transparent;
+}
+
+.service-item {
+    padding: 40px;
+    flex: 0 0 calc(25% - 20px); 
+    max-width: calc(25% - 20px);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    text-align: center;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    background: rgba(111, 78, 55, 0.2);
+    border-color: #c4a484;
+}
+
+.service-item i {
+    font-size: 35px;
+    color: #c4a484;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.service-item h3 {
+    font-size: 15px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.service-item p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+main > section:last-of-type {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+
+main > section p {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+main > section a {
+    display: inline-block;
+    padding: 15px 40px;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 4px;
+}
+
+/* 7. CONTACT FORM */
+section form {
+    background: rgb(84, 84, 70);
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto 50px;
+    padding: 40px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+form input, form select, form textarea {
+    background-color: #c2b9b9;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid #a9a3a3;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+form button {
+    background: #6f4e37;
+    color: #fff;
+    padding: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {background: #4e3626;}
+
+/* INFO SECTIONS */
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 60px 5%;
+    gap: 40px;
+}
+
+.contact-grid h3 {
+    color: #c4a484;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+
+.contact-grid p {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #fff;
+}
+
+/* SOCIAL LINKS */
+.contact-grid a {
+    color: #955f2a;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-grid a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px rgba(196, 164, 132, 0.8);
+}
+
+/* THE MAP */
+.contact-container iframe {
+    width: 100%;
+    height: 400px;
+    border-radius: 5px;
+}
+
+/* CHAT WIDGET */
+.chat-widget {
+    position: fixed;
+    bottom: 150px;
+    right: 30px;
+    width: 80px;
+    height: 80px;
+    background-color: rgb(35, 28, 3);
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+    
+    /*Using Flexbox to stack and center */
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;   
+    
+    /* Typography*/
+    font-size: 11px;
+    font-weight: 900;
+    transition: 0.4s;
+}
+
+.chat-widget span {
+    display: block;  /*Ensures each word stays on its own line*/
+}
+
+.chat-widget:hover {
+    transform: translateY(-5px) scale(1.05);
+    background-color: #291106;
+}
+
+/* 8. FOOTER */
+footer {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 40px 5%;
+    text-align: center;
+}
+
+.foot i {
+    margin: 20px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.foot i:hover { color: #d4a373; }
+
+/* ============================================================
+   RESPONSIVE DESIGN (FOR ALL PAGES: HOME, ABOUT, SERVICES, CONTACT)
+   ============================================================ 
+*/
+
+/* 1. (1024px and below) */
+@media (max-width: 1024px) {
+    header h1 { font-size: 28px; }
+    .cafe { font-size: 45px; }
+    .gallery, .vision, .bio { padding: 40px 5%; }
+    .service-item {
+        flex: 0 0 calc(50% - 25px);
+        max-width: calc(50% - 25px);
+    }
+    .story { padding: 50px 5%; }
+}
+
+/* 2. (768px and below) */
+@media (max-width: 768px) {
+    header .flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    nav ul {
+        gap: 10px;
+        justify-content: center;
+        padding: 0;
+    }
+    nav ul li a { font-size: 11px; }
+
+    .cards {
+        display: flex;
+        flex-direction: column;  
+        justify-content: center;
+        gap: 20px;  
+    }
+    #menu {
+        display: block;
+        flex: 0 0 100%; 
+        margin-top: 30px;  
+        text-align: center;               
+    }
+    .center { height: 60vh; }
+    .cafe { font-size: 32px; }
+    .center p { font-size: 18px; }
+    .column {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .gallery {padding:40px 20px;}
+
+    .our, .about h1, .bold h1 { font-size: 32px; }
+
+    /* CONTACT FORM: Fix the 600px overflow */
+    section form {
+        width: 90% !important; /* Forces the box to stay inside the screen */
+        max-width: 400px;
+        padding: 20px;
+    }
+
+    /* CONTACT INFO & MAP: Stack side-by-side to vertical */
+    .contact-grid {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .contact-container iframe {
+        height: 300px;
+        width: 100%;
+    }
+
+    /* ABOUT/BIO: Ensure text doesn't touch screen edges */
+    .vision, .bio {
+        padding: 30px 20px;
+        text-align: center;
+    }
+
+    .vision h2 { font-size: 28px; }
+
+    /* FOOTER & WIDGET */
+    footer { padding: 30px 10px; }
+    
+    .chat-widget {
+        bottom: 20px;
+        right: 15px;
+        width: 65px;
+        height: 65px;
+        font-size: 9px;
+    }
+}
+
+/* 3. (480px and below) */
+@media (max-width: 480px) {
+    header h1 { font-size: 22px; }
+    .column img { height: 150px; }
+    .service-item { padding: 20px; }
+}
+
