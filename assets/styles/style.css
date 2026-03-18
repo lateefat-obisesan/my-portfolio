@@ -1,3 +1,129 @@
 @charset "utf-8";
 @import"./reset.css";
 
+You said
+thank you for listening, but please can you find someone we something simipler to know what to use. this is my home page those links i do not like it line of the inks and to Name. why is the footer not down also this copyright thing, i want the written to be on the left and the icons on the right. i just want the messages to the left and icons to right. i love how my picture is in first paragraph is okay but looking at the rest it is not. looking at the project i think it is okay but in that column the notes there are not on the same line like it is not accurate. to link about the live and view code. so in the contact the space in the center is too much i believe, also i do not like the fact that we are using different color thaat contact me. as you can see the copyright the links are not properly design. make link easy for me by doing the right thing chek other people for ideas with simler na
+
+Gemini said
+I understand exactly what you are seeing. You want a clean, professional layout where things stay in their lane—text on the left, icons on the right, and a footer that stays at the bottom. I looked at how top-tier developers structure their "Minimalist" portfolios to get the right logic for your specific HTML.
+
+Here is the simplified CSS that fixes the "exploding" look and aligns everything the way you asked.
+
+The Master CSS Fix
+CSS
+/* 1. RESET: Ensures your dimensions are accurate */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: dazzle 15s ease infinite;
+    color: #000;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* This helps push footer down */
+}
+
+@keyframes dazzle {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 2. HEADER: Navigation on the right, name on the left */
+header {
+    display: flex;
+    justify-content: flex-end; /* This aligns your links to the right */
+    padding: 30px 10%;
+}
+
+.hero {
+    display: flex;
+    list-style: none;
+    gap: 40px; /* Even spacing between Home, About, Projects */
+}
+
+.hero a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+/* 3. MAIN CONTENT: Forces footer down */
+main {
+    flex: 1; 
+    padding: 20px 10%;
+}
+
+/* 4. ABOUT PAGE: Picture with text wrapping */
+.img {
+    float: left; 
+    margin: 0 30px 20px 0;
+}
+
+.img img {
+    width: 250px; 
+    border-radius: 8px;
+}
+
+/* 5. PROJECTS: Fixed 3-column grid with aligned links */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Keeps "Live Site" and "View Code" on the same line at bottom */
+}
+
+.project-links {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* 6. CONTACT FORM: Centered and clean */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+/* 7. FOOTER: Text on Left, Icons on Right */
+footer .foot {
+    display: flex;
+    justify-content: space-between; /* Pushes text left and icons right */
+    align-items: center;
+    padding: 40px 10%;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.foot div {
+    display: flex;
+    gap: 20px; /* Spaces out your social icons */
+}
+
+.foot i {
+    font-size: 20px;
+    color: #000;
+}
