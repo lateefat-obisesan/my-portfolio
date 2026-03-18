@@ -1,3 +1,158 @@
 @charset "utf-8";
 @import"./reset.css";
 
+/* GLOBAL SETTINGS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f0c29; /* Fallback color */
+    background-image: 
+        radial-gradient(1px 1px at 25px 35px, #ffffff, transparent),
+        radial-gradient(1px 1px at 50px 70px, #ffffff, transparent),
+        linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+    background-size: 150px 150px, 200px 200px, 100% 100%;
+    background-attachment: fixed;
+    /* ... keep the rest of your body styles ... */
+}
+
+/* HEADER STYLE - LATEEFAT Logo */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 10%;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #b2afca;
+    filter: drop-shadow(0 0 5px rgba(0,242,254,0.5));
+}
+
+/* NAVIGATION - All links look the same now */
+.hero {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.hero a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 8px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    transition: 0.4s;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.hero a:hover {
+    background: #5c6ca3;
+    border-color: #4facfe;
+    box-shadow: 0 0 20px rgba(79, 172, 254, 0.6);
+    transform: translateY(-3px);
+}
+
+/* MAIN CONTENT - Centered */
+main a {
+    color: #cbd5de;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: 0.3s;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+main a:hover {
+    border-bottom: 2px solid #4facfe;
+    letter-spacing: 1px;
+}
+
+.center{
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 80px;
+}
+.project-preview{text-align: center;}
+.contact{text-align: center;}
+
+.center h1 {
+    font-size: 4.5rem; /* Big, bold font */
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff; /* Make it pop */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Subtle glow */
+}
+
+.subtitle {
+    font-size: 19px;
+    color: #fff;
+    margin-bottom: 30px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.description {
+    color: #dcd4d4;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 17px;
+    margin-bottom: 40px;
+}
+
+/* SECTION SPACING */
+section {
+    margin-top: 25px;
+    margin-bottom: 50px;
+    max-width: 800px; /* This stops it from stretching too far */
+    margin-left: auto; /* This centers the section */
+    margin-right: auto; /* This centers the section */
+}
+
+section h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* FOOTER - Locked to bottom */
+footer {
+    min-height: 100px; /* Changed from 200px to be more balanced */
+    width: 100%;       /* Changed from 90% so it fits the whole screen */
+    padding: 40px 10%; /* Matches the padding of your Header */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+    margin-top: auto;  /* Ensures it stays at the bottom */
+}
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 25px;
+}
+
+.social-icons i {
+    font-size: 1.5rem;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.social-icons i:hover {
+    color: #a8b9f3;
+    transform: scale(1.2);
+}
