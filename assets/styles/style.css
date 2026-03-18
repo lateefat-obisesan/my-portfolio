@@ -125,6 +125,105 @@ section h2 {
     font-weight: bold;
 }
 
+/*The About*/
+.about-hero {
+    display: flex;
+    align-items: center; /* Vertically centers text with the image */
+    gap: 50px;           /* Space between image and text */
+    margin: 60px 0;      /* Space above and below the section */
+    flex-wrap: wrap;     /* Ensures it looks good on mobile */
+}
+
+.about-hero .img img {
+    width: 300px;        /* Fixed size so it's not huge */
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bio-text {
+    flex: 1;             /* Lets the text take up remaining space */
+    min-width: 300px;    /* Prevents text from getting too narrow */
+}
+
+.bio-text h1 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.bio-text p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.column ul {
+    list-style: none;    /* Remove default dots */
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.column li {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.column i {
+    color: #9e9da2;  
+    font-size: 1.2rem;
+}
+
+.gallery-grid, 
+.gallery-sun, 
+.gallery-crochet {
+    display: flex;
+    overflow-x: auto;    /* Enable horizontal scrolling */
+    gap: 15px;
+    padding: 20px 0;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+/* Specific Image/Video Styling in Gallery */
+.gallery-grid img, 
+.gallery-sun img, 
+.gallery-crochet img, 
+.gallery-crochet video {
+    height: 350px;       /* Fixed height for uniformity */
+    width: auto;         /* Maintains aspect ratio */
+    border-radius: 12px;
+    flex-shrink: 0;      /* Stops images from being squished */
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover, 
+.gallery-sun img:hover, 
+.gallery-crochet img:hover {
+    transform: scale(1.02); /* Subtle zoom on hover */
+}
+
+/* Custom Scrollbar for Chrome/Safari/Edge */
+.gallery-grid::-webkit-scrollbar, 
+.gallery-sun::-webkit-scrollbar, 
+.gallery-crochet::-webkit-scrollbar {
+    height: 8px;
+}
+
+.gallery-grid::-webkit-scrollbar-thumb, 
+.gallery-sun::-webkit-scrollbar-thumb, 
+.gallery-crochet::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+}
+
 /* FOOTER - Locked to bottom */
 footer {
     min-height: 100px; /* Changed from 200px to be more balanced */
