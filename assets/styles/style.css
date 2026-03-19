@@ -61,6 +61,11 @@ header {
     transform: translateY(-3px);
 }
 
+.hero a.active {
+    background: #5c6ca3;
+    border-color: #4facfe;
+}
+
 /* MAIN CONTENT - Centered */
 main a {
     color: #cbd5de;
@@ -161,6 +166,10 @@ section h2 {
 .bio-text {
     flex: 1;
     min-width: 300px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .bio-text p {
@@ -339,7 +348,8 @@ section h2 {
 /*contact*/
 .contact-page {
     max-width: 1100px;
-    color: #ffffff;
+    background-color: #24243e; 
+    color: white;
     margin: 60px auto 100px auto;
     padding: 0 20px;
     display: grid;
@@ -403,6 +413,12 @@ section h2 {
     color: #ffffff;
 }
 
+.contact-page > p:last-of-type {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 50px;
+}
+
 /* --- 3. INFO SECTION --- */
 .contact-page .info h3 {
     color: #ffffff;
@@ -433,6 +449,11 @@ section h2 {
     color: #615fce;
 }
 
+main:not(.contact-page) section { 
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /* --- 4. RESPONSIVE (Stack on Mobile) --- */
 @media (max-width: 850px) {
@@ -455,6 +476,8 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .social-icons {
@@ -468,7 +491,8 @@ footer {
     transition: 0.3s;
 }
 
-.social-icons i:hover {
-    color: #a8b9f3;
+.social-icons a:hover i {
+    color: #504288;
+    transform: scale(1.2);
     transform: scale(1.2);
 }
