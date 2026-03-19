@@ -336,6 +336,111 @@ section h2 {
     transform: scale(1.05); /* Slight grow effect */
 }
 
+/*contact*/
+.contact-page {
+    max-width: 1100px;
+    color: #ffffff;
+    margin: 60px auto 100px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Form on left, Info on right */
+    gap: 60px;
+}
+
+/* Make the title span across both columns */
+.contact-page h1 {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 3.5rem;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+
+/* --- 2. FORM DESIGN --- */
+.contact-page form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-page label {
+    display: block;
+    color: #ffffff;
+    font-size: 1.2rem; /* Larger font as requested */
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.contact-page input, 
+.contact-page select, 
+.contact-page textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 1.1rem; /* Larger font */
+}
+
+.contact-page button {
+    background: #ffffff;
+    color: #0f0c29;
+    padding: 18px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.contact-page button:hover {
+    background: #615fce;
+    color: #ffffff;
+}
+
+/* --- 3. INFO SECTION --- */
+.contact-page .info h3 {
+    color: #ffffff;
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.contact-page .info p {
+    color: #ffffff; /* High contrast white */
+    font-size: 19px; /* Larger font */
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.contact-page .icon {
+    display: flex;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.contact-page .icon i {
+    font-size: 2.5rem;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.contact-page .icon a:hover i {
+    color: #615fce;
+}
+
+
+/* --- 4. RESPONSIVE (Stack on Mobile) --- */
+@media (max-width: 850px) {
+    .contact-page {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* FOOTER - Locked to bottom */
 footer {
     min-height: 100px; /* Changed from 200px to be more balanced */
