@@ -581,9 +581,61 @@ footer {
     transform: scale(1.2);
 }
 
-/* --- 4. RESPONSIVE (Stack on Mobile) --- */
-@media (max-width: 850px) {
+/* --- FINAL RESPONSIVE DESIGN --- */
+@media (max-width: 1024px) {
+    header {
+        padding: 20px 5%; 
+    }
+    
+    .center h1, .project-info h1 {
+        font-size: 3rem; 
+    }
+}
+
+/* Mobile Devices (Screens under 768px) */
+@media (max-width: 768px) {
+    .about-hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .about-hero .img img {
+        width: 220px; 
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .column ul {
+        grid-template-columns: 1fr;
+    }
+
     .contact-page {
         grid-template-columns: 1fr;
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    .contact-page h1 {
+        font-size: 2.5rem;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hero {
+        gap: 10px;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+
+    .gallery img, .gallery video {
+        height: 250px; 
+        width: 220px;
     }
 }
