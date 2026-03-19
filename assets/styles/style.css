@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import"./reset.css";
 
-/* GLOBAL SETTINGS */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,14 +9,14 @@
 }
 
 body {
-    background: #0f0c29; /* Fallback color */
+/* Dark gradient background with subtle star-like effects for a modern look */
+    background: #0f0c29; 
     background-image: 
         radial-gradient(1px 1px at 25px 35px, #ffffff, transparent),
         radial-gradient(1px 1px at 50px 70px, #ffffff, transparent),
         linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
     background-size: 150px 150px, 200px 200px, 100% 100%;
     background-attachment: fixed;
-    /* ... keep the rest of your body styles ... */
 }
 
 /* HEADER STYLE - LATEEFAT Logo */
@@ -36,7 +36,7 @@ header {
     filter: drop-shadow(0 0 5px rgba(0,242,254,0.5));
 }
 
-/* NAVIGATION - All links look the same now */
+/* NAVIGATION */
 .hero {
     display: flex;
     list-style: none;
@@ -66,7 +66,7 @@ header {
     border-color: #4facfe;
 }
 
-/* MAIN CONTENT - Centered */
+/* MAIN CONTENT*/
 main a {
     color: #cbd5de;
     text-decoration: none;
@@ -89,14 +89,14 @@ main a:hover {
     font-size: 18px;
 }
 .project-preview{text-align: center;}
-.contact{text-align: center;}
+
 
 .center h1 {
-    font-size: 4.5rem; /* Big, bold font */
+    font-size: 4.5rem; 
     margin-bottom: 20px;
     text-align: center;
-    color: #ffffff; /* Make it pop */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Subtle glow */
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .subtitle {
@@ -115,13 +115,13 @@ main a:hover {
     margin-bottom: 40px;
 }
 
-/* SECTION SPACING */
+
 section {
     margin-top: 25px;
     margin-bottom: 50px;
-    max-width: 800px; /* This stops it from stretching too far */
-    margin-left: auto; /* This centers the section */
-    margin-right: auto; /* This centers the section */
+    max-width: 800px; 
+    margin-left: auto; 
+    margin-right: auto; 
 }
 
 section h2 {
@@ -130,13 +130,11 @@ section h2 {
     margin-bottom: 20px;
 }
 
-/* Making the descriptions White and 18px */
 section p {
     color: #ffffff;
     font-size: 18px;
 }
 
-/* Making the links (like "View my project") Blue and Underlined */
 section a {
     color: #c0c6dd;
     font-size: 20px;
@@ -144,31 +142,87 @@ section a {
     font-weight: bold;
 }
 
-/* Adding 60px space above your Contact button */
-.contact a {
-    margin-top: 60px;
-    background-color: #ffffff;
-    color: #0f0c29;
-    text-decoration: none; /* Keeps the button looking like a button */
+.contact-a {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    text-align: center;
+    margin: 80px auto;      
+    padding: 0 20px;
 }
 
-/*about*/
+.contact-a h2 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.contact-a p {
+    color: #ffffff;
+    margin-bottom: 35px; 
+}
+
+.contact-a a {
+    background-color: #ffffff;
+    color: #0f0c29;
+    text-decoration: none;
+    padding: 12px 30px;      
+    border-radius: 50px;    
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.contact-a a:hover {
+    background-color: #9a9ee1; 
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/*About*/
 .about-hero h1, 
 .column h2, 
-.work h2, 
-.gallery h2,
-.photo h3 {
+.work h2{
     text-align: center;
     color: #ffffff;
     margin-bottom: 30px;
 }
 
-.work{color: #fff;}
+.work{
+    color: #fff;
+    max-width: 900px;
+    margin: 0 auto 80px auto;
+    padding: 40px;
+    border-left: 4px solid #9088c9;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 0 20px 20px 0;
+}
+
+.work p {
+    font-size: 15px;
+    line-height: 1.8;
+}
 
 .about-hero h1 { font-size: 3rem; }
-.column h2, .work h2, .gallery h2 { font-size: 2rem; }
+.column h2, .work h2 { font-size: 2rem; }
+.photo h3 {
+    color: #d0cbcb;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+}
 
-/* --- 2. ABOUT HERO (Portrait & Bio) --- */
+.gallery h2 {
+    color: #dbd2d2;
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    text-decoration: underline;
+}
+
 .about-hero {
     display: flex;
     align-items: center; 
@@ -183,6 +237,8 @@ section a {
     width: 280px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+    transition: transform 0.3s ease;
 }
 
 .bio-text {
@@ -192,21 +248,24 @@ section a {
     padding: 30px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); 
+    transition: transform 0.3s ease;
 }
 
 .bio-text p {
-    color: #fff; /* Brighter font color for readability */
+    color: #fff; 
     line-height: 1.8;
     margin-bottom: 20px;
 }
 
-/* --- 3. SKILLS GRID (Centered & Bordered) --- */
 .column {
-    border: 1px solid rgba(255, 255, 255, 0.2); 
+    background-color: #48487d; /* Solid dark color so it's not transparent */
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7); 
     padding: 40px;
     border-radius: 15px;
     max-width: 900px;
-    margin: 60px auto; /* Centers the whole skills box */
+    margin: 60px auto;
 }
 
 .column ul {
@@ -228,30 +287,30 @@ section a {
     gap: 10px;
 }
 
-/* --- 4. GALLERY (Standard Scroll) --- */
-/* Removed -webkit- stuff. This uses standard browser behavior */
 .gallery-grid, .gallery-sun, .gallery-crochet {
     display: flex;
     overflow-x: auto; 
-    gap: 35px;
+    gap: 45px;
     margin-bottom: 40px;
 }
 
 .gallery img, .gallery video {
-    height: 300px;
-    width: auto;
-    border-radius: 12px;
+    height: 350px; 
+    width: 300px;  /* Fixed width to make them wider/less packed */
+    object-fit: cover; /* Ensures photos don't look stretched */
+    border-radius: 15px;
     flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* --- 5. CONTACT LINK & FOOTER SPACING --- */
+
 .contact {
     text-align: center;
-    margin: 100px 0; /* Huge space to separate from gallery and footer */
+    margin: 100px 0; 
 }
 
 .contact a {
-    background-color: #ffffff;
+    background-color: #e6dede;
     color: #0f0c29;
     padding: 18px 45px;
     border-radius: 50px;
@@ -265,7 +324,7 @@ section a {
 .project-info {
     text-align: center;
     max-width: 800px;
-    margin: 60px auto; /* Centers the header and gives it space */
+    margin: 60px auto; 
     padding: 0 20px;
 }
 
@@ -282,7 +341,6 @@ section a {
     line-height: 1.8;
 }
 
-/* --- 2. THE PROJECT GRID --- */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -292,7 +350,6 @@ section a {
     padding: 0 20px;
 }
 
-/* --- 3. PROJECT CARDS --- */
 .project-card {
     display: flex;
     flex-direction: column;
@@ -306,13 +363,13 @@ section a {
 
 .project-card:hover {
     transform: translateY(-10px);
-    border-color: #6d8dcd; /* Using your hover color for the border too */
+    border-color: #6d8dcd; 
     box-shadow: 0 10px 30px rgba(79, 172, 254, 0.2);
 }
 
 .project-card img {
     width: 100%;
-    height: 220px; /* Slightly taller image */
+    height: 220px; 
     object-fit: cover;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -326,18 +383,17 @@ section a {
 
 .project-content h3 {
     color: #ffffff;
-    font-size: 20px; /* Larger Title */
+    font-size: 20px; 
     margin-bottom: 15px;
 }
 
 .project-content p {
-    color: #dcd4d4; /* Brighter grey for better contrast */
-    font-size: 16px; /* Increased from 0.95rem */
+    color: #dcd4d4; 
+    font-size: 16px; 
     line-height: 1.7;
     margin-bottom: 25px;
 }
 
-/* --- 4. PROJECT LINKS (Buttons) --- */
 .project-links {
     display: flex;
     gap: 15px;
@@ -346,22 +402,20 @@ section a {
 
 .project-links a {
     text-decoration: none;
-    font-weight: 700; /* Bolder text */
-    font-size: 1rem;  /* Increased from 0.9rem */
-    padding: 12px 25px; /* Bigger buttons */
+    font-weight: 700; 
+    font-size: 1rem;  
+    padding: 12px 25px; 
     border-radius: 50px;
     transition: 0.3s;
     border: 1px solid rgba(255, 255, 255, 0.3);
     display: inline-block;
 }
 
-/* The "Live Site" link style */
 .project-links a:first-child {
-    background: #ffffff; /* White background makes this primary action stand out */
+    background: #ffffff; 
     color: #0f0c29;
 }
 
-/* The "View Code" link style */
 .project-links a:last-child {
     background: #fff;
     color: #0f0c29;
@@ -371,10 +425,9 @@ section a {
     background: #6e6dc9;
     color: #fff;
     border-color: #b3c8f3;
-    transform: scale(1.05); /* Slight grow effect */
+    transform: scale(1.05);
 }
 
-/*contact*/
 .contact-page {
     max-width: 1100px;
     background-color: transparent; 
@@ -385,7 +438,6 @@ section a {
     gap: 60px;
 }
 
-/* Make the title span across both columns */
 .contact-page h1 {
     grid-column: 1 / -1;
     text-align: center;
@@ -395,13 +447,12 @@ section a {
 }
 
 .para {
-    margin-bottom: 60px; /* Increased space */
+    margin-bottom: 60px;
     color: #ffffff;
     font-size: 18px;
     line-height: 1.6;
 }
 
-/* --- 2. FORM DESIGN --- */
 .contact-page form {
     background: transparent;
     padding: 40px;
@@ -426,7 +477,7 @@ section a {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     color: #262222;
-    font-size: 16px; /* Larger font */
+    font-size: 16px; 
 }
 
 .contact-page button {
@@ -453,7 +504,6 @@ section a {
     margin-top: 50px;
 }
 
-/* --- 3. INFO SECTION --- */
 .contact-page .info h3 {
     color: #ffffff;
     font-size: 27px;
@@ -461,8 +511,8 @@ section a {
 }
 
 .contact-page .info p {
-    color: #ffffff; /* High contrast white */
-    font-size: 18px; /* Larger font */
+    color: #ffffff;
+    font-size: 18px; 
     line-height: 1.7;
     margin-bottom: 30px;
 }
@@ -496,21 +546,14 @@ section a {
     font-weight: bold;
 }
 
-/* --- 4. RESPONSIVE (Stack on Mobile) --- */
-@media (max-width: 850px) {
-    .contact-page {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* FOOTER - Locked to bottom */
+/* FOOTER */
 footer {
-    min-height: 100px; /* Changed from 200px to be more balanced */
-    width: 100%;       /* Changed from 90% so it fits the whole screen */
-    padding: 40px 10%; /* Matches the padding of your Header */
+    min-height: 100px; 
+    width: 100%;      
+    padding: 40px 10%; 
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     background: rgba(0, 0, 0, 0.2);
-    margin-top: auto;  /* Ensures it stays at the bottom */
+    margin-top: auto;  
 }
 
 .foot {
@@ -536,4 +579,11 @@ footer {
     color: #504288;
     transform: scale(1.2);
     transform: scale(1.2);
+}
+
+/* --- 4. RESPONSIVE (Stack on Mobile) --- */
+@media (max-width: 850px) {
+    .contact-page {
+        grid-template-columns: 1fr;
+    }
 }
