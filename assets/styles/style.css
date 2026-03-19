@@ -78,7 +78,6 @@ main a {
 }
 
 main a:hover {
-    border-bottom: 2px solid #4facfe;
     letter-spacing: 1px;
 }
 
@@ -87,9 +86,11 @@ main a:hover {
     margin: 0 auto;
     text-align: center;
     margin-bottom: 80px;
+    font-size: 18px;
 }
 .project-preview{text-align: center;}
 .contact{text-align: center;}
+.center a {text-decoration: underline;}
 
 .center h1 {
     font-size: 4.5rem; /* Big, bold font */
@@ -125,9 +126,31 @@ section {
 }
 
 section h2 {
+    color: #ffffff;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Making the descriptions White and 18px */
+section p {
+    color: #ffffff;
     font-size: 18px;
-    margin-bottom: 15px;
+}
+
+/* Making the links (like "View my project") Blue and Underlined */
+section a {
+    color: #c0c6dd;
+    font-size: 20px;
+    text-decoration: underline;
     font-weight: bold;
+}
+
+/* Adding 60px space above your Contact button */
+.contact a {
+    margin-top: 60px;
+    background-color: #ffffff;
+    color: #0f0c29;
+    text-decoration: none; /* Keeps the button looking like a button */
 }
 
 /*about*/
